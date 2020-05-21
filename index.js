@@ -46,18 +46,18 @@ class Person {
     this.age = age;
     this.stomach = [];
   };
-}
-  Person.prototype.eat = function(edible){
-    if(this.stomach.length < 10){
-      this.stomach.push(edible);
-    }
-  };
-  Person.prototype.poop = function(){
+  eat(someFood){
+    if (this.stomach.length < 10){
+      this.stomach.push(someFood);
+    }//this ends the push
+  }//this ends the eat
+  poop(){
     this.stomach = [];
+  }//this ends poop
+  toString(){
+    return `${this.name}, ${this.age}`
   };
-  Person.prototype.toString = function(){
-    return `${this.name} and ${this.age}`;
-  }
+  
 
 /*
   TASK 2
@@ -81,7 +81,11 @@ class Car {
     this.odometer = 0;
   }
 }
-
+Car.prototype.fill = function(gallons){
+  this.tank = this.tank + gallons;
+}
+Car.prototype.drive = function(distance){
+}
 
 /*
   TASK 3
