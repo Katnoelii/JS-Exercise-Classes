@@ -56,8 +56,9 @@ class Person {
   }//this ends poop
   toString(){
     return `${this.name}, ${this.age}`
-  };
-  
+  }//this ends toString
+  };//this ends the class
+
 
 /*
   TASK 2
@@ -80,12 +81,18 @@ class Car {
     this.tank = 0;
     this.odometer = 0;
   }
-}
-Car.prototype.fill = function(gallons){
-  this.tank = this.tank + gallons;
-}
-Car.prototype.drive = function(distance){
-}
+  fill(gallons){
+    this.tank = this.tank += gallons;
+  }
+  drive(distance){
+    if (distance / this.milesPerGallon > this.tank){
+      this.drive(this.milesPerGallon * this.tank);
+      return `I ran out of fuel at ${this.odometer}`;
+    }
+    this.odometer += distance;
+    this.tank -= distance/this.milesPerGallon;
+  }
+} 
 
 /*
   TASK 3
@@ -156,6 +163,7 @@ class Student {
 class ProjectManager {
 
 }
+
 
 /*
   STRETCH PROBLEM (no tests!)
